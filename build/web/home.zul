@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="template.zul"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="xhtml">
+    
+    <window self="@{define(centro)}" id="modalDialog" title="Coffee Order" border="normal" width="460px"
+    position="center,center" closable="false" sizable="true" mode="modal"
+    action="show: slideDown;hide: slideUp"
+    apply="org.zkoss.bind.BindComposer"
+    viewModel="@id('home') @init('controller.HomeVM')">
+        <grid>
+            <columns>
+                <column height="0"></column>
+                <column height="0"></column>
+                <column height="0"></column>
+            </columns>
+            <rows>
+                <row>
+                    <cell rowspan="2"></cell>
+                    <cell>Login</cell>
+                    <cell>
+                        <textbox tabindex="3" value="@bind(home.login)" />
+                    </cell>
+                </row>
+                <row>
+                    <cell>Senha</cell>
+                    <cell>
+                        <textbox type="password" value="@bind(home.senha)" tabindex="3" />
+                    </cell>
+                </row>
+                <row>
+                    <cell colspan="3">
+                        <button label="Login" onClick="@command('validaLogin')" />
+                    </cell>
+                </row>
+            </rows>
+        </grid>
+    </window>
+    
+    <div self="@{define(rodape)}">
+        sjjsjsjsjs
+    </div>
+
+</zk>
